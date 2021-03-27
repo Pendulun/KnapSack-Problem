@@ -7,7 +7,7 @@ namespace BackPackProblem{
 	public:
 		BackPackFactory();
 		virtual ~BackPackFactory();
-		virtual BackPack* createBackPack() = 0;
+		virtual BackPack* createBackPack(float maxWeigth) = 0;
 	};
 }
 #endif

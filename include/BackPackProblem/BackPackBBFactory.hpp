@@ -7,7 +7,7 @@ namespace BackPackProblem{
 	class BackPackBBFactory : public BackPackFactory{
 	public:
 		BackPackBBFactory();
-		BackPack* createBackPack() override;
+		BackPack* createBackPack(float maxWeigth) override;
 	};
 }
 #endif
