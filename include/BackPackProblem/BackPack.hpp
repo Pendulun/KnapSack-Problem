@@ -10,9 +10,9 @@ namespace BackPackProblem{
 		std::list<Item> items;
 	public:
 		BackPack(float maxWeight);
-		float solve();
+		virtual float solve() = 0;
 		void setItems(std::list<Item> items);
-		virtual float getMaxWeight() = 0;
+		float getMaxWeight();
 		std::list<Item> getItems();
 		virtual ~BackPack();
 	};
