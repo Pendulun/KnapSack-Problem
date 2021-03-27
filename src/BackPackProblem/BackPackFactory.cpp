@@ -2,4 +2,7 @@
 
 namespace BackPackProblem{
 
+	BackPackFactory::BackPackFactory(){}
+
+	BackPackFactory::~BackPackFactory(){}
 }

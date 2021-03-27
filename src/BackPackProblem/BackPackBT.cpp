@@ -2,8 +2,10 @@
 
 namespace BackPackProblem{
 
-	BackPackBT::BackPackBT(float maxWeigth){
-		BackPack::BackPack(maxWeigth);
+	BackPackBT::BackPackBT(){
+	}
+
+	BackPackBT::~BackPackBT(){
 	}
 
 	float BackPackBT::solve(){

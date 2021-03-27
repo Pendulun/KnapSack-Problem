@@ -2,12 +2,13 @@
 #define BACKPACKBBFACTORY_H
 #include "BackPack.hpp"
 #include "BackPackBB.hpp"
+#include "BackPackFactory.hpp"
 
 namespace BackPackProblem{
-	class BackPackBBFactory : public BackPackFactory{
+	class BackPackBBFactory : public BackPackFactory::BackPackFactory{
 	public:
 		BackPackBBFactory();
-		BackPack* createBackPack(float maxWeigth) override;
+		BackPack* createBackPack() override;
 	};
 }
 #endif

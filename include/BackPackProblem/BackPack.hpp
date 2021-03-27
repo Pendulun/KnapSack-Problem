@@ -6,13 +6,13 @@
 namespace BackPackProblem{
 	class BackPack{
 	private:
-		float maxWeight;
+		float maxWeigth;
 		std::list<Item> items;
 	public:
-		BackPack(float maxWeight);
-		virtual float solve() = 0;
+		virtual float solve();
 		void setItems(std::list<Item> items);
-		float getMaxWeight();
+		void setMaxWeigth(float maxWeigth);
+		float getMaxWeigth();
 		std::list<Item> getItems();
 		virtual ~BackPack();
 	};

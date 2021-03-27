@@ -7,7 +7,8 @@
 namespace BackPackProblem{
 	class BackPackBB : public BackPack{
 	public:
-		BackPackBB(float maxWeight);
+		BackPackBB();
+		~BackPackBB() override;
 		float solve() override;
 	};
 }

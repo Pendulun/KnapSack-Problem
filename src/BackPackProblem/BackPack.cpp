@@ -2,7 +2,13 @@
 
 namespace BackPackProblem{
 
-	BackPack::BackPack(float maxWeigth){
+	BackPack::~BackPack(){
+	}
+
+	float BackPack::solve(){
+	}
+
+	void BackPack::setMaxWeigth(float maxWeigth){
 		this->maxWeigth = maxWeigth;
 	}
 
@@ -17,4 +23,6 @@ namespace BackPackProblem{
 	std::list<Item> BackPack::getItems(){
 		return this->items;
 	}
+
+
 }
