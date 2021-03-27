@@ -1,6 +1,7 @@
 #ifndef BACKPACKBB_H
 #define BACKPACKBB_H
 #include <list>
+#include "Item.hpp"
 #include "BackPack.hpp"
 
 namespace BackPackProblem{
