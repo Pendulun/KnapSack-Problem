@@ -25,7 +25,7 @@ $(BUILD)$(BTPRO)BackPackBTFactory.o: $(SRC)$(BTPRO)BackPackBTFactory.cpp $(INCLU
 $(BUILD)$(BTPRO)BackPackBT.o: $(SRC)$(BTPRO)BackPackBT.cpp $(INCLUDE)$(BTPRO)BackPackBT.hpp $(BUILD)$(BTPRO)Item.o $(BUILD)$(BTPRO)BackPack.o
 	$(CC) $(CFLAGS) -I $(INCLUDE)$(BTPRO) -c $(SRC)$(BTPRO)BackPackBT.cpp -o $(BUILD)$(BTPRO)BackPackBT.o
 
-$(BUILD)$(BTPRO)BackPackBB.o: $(SRC)$(BTPRO)BackPackBB.cpp $(INCLUDE)$(BTPRO)BackPackBB.hpp $(BUILD)$(BTPRO)Item.o $(BUILD)$(BTPRO)BackPack.o
+$(BUILD)$(BTPRO)BackPackBB.o: $(SRC)$(BTPRO)BackPackBB.cpp $(INCLUDE)$(BTPRO)BackPackBB.hpp $(BUILD)$(BTPRO)Item.o $(BUILD)$(BTPRO)BackPack.o $(BUILD)$(BTPRO)Node.o
 	$(CC) $(CFLAGS) -I $(INCLUDE)$(BTPRO) -c $(SRC)$(BTPRO)BackPackBB.cpp -o $(BUILD)$(BTPRO)BackPackBB.o
 
 $(BUILD)$(BTPRO)BackPack.o: $(SRC)$(BTPRO)BackPack.cpp $(INCLUDE)$(BTPRO)BackPack.hpp $(BUILD)$(BTPRO)Item.o
@@ -33,6 +33,9 @@ $(BUILD)$(BTPRO)BackPack.o: $(SRC)$(BTPRO)BackPack.cpp $(INCLUDE)$(BTPRO)BackPac
 
 $(BUILD)$(BTPRO)Item.o: $(SRC)$(BTPRO)Item.cpp $(INCLUDE)$(BTPRO)Item.hpp
 	$(CC) $(CFLAGS) -I $(INCLUDE)$(BTPRO) -c $(SRC)$(BTPRO)Item.cpp -o $(BUILD)$(BTPRO)Item.o
+
+$(BUILD)$(BTPRO)Node.o: $(SRC)$(BTPRO)Node.cpp $(INCLUDE)$(BTPRO)Node.hpp
+	$(CC) $(CFLAGS) -I $(INCLUDE)$(BTPRO) -c $(SRC)$(BTPRO)Node.cpp -o $(BUILD)$(BTPRO)Node.o
 
 run_all_tests:	$(EXEC)
 	$(EXEC) ./testcases/*
