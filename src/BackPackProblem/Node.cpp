@@ -24,4 +24,20 @@ namespace BackPackProblem{
 		return this->value;
 	}
 
+	void Node::setWeigth(float weigth){
+		this->weigth = weigth;
+	}
+
+	void Node::setIndex(int index){
+		this->index = index;
+	}
+	
+	void Node::setValue(float value){
+		this->value = value;
+	}
+
+	void Node::setBound(float bound){
+		this->bound = bound;
+	}
+
 }
