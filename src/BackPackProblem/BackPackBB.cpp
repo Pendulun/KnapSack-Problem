@@ -8,33 +8,46 @@ namespace BackPackProblem{
 	BackPackBB::~BackPackBB(){
 	}
 
+	float BackPackBB::calculaUB(const Item &proxItem, float valor, float pesoRestante){
+		float valorEstimado = proxItem.getValue();
+		valorEstimado /= proxItem.getWeigth();
+		return valor + pesoRestante*valorEstimado;
+	}
+
 	float BackPackBB::maiorValorPossivel(){
-		if(itemIndex == this->BackPack::getItems().size()){
-			return valorTotal;
-		}else{
+		float maiorValor = 0.0;
+		float pesoAcumulado = 0.0;
 
-			float pesoItem = this->BackPack::getItems()[itemIndex].getWeigth();
-			float valorItem = this->BackPack::getItems()[itemIndex].getValue();
-			float valorComItem = 0.0;
-			float valorSemItem = 0.0;
+		std::queue<<Item,int>> filaItems;
 
-			//Poda de ramo
-			if(pesoRestante-pesoItem >=0){
-				valorComItem = this->maiorValorPossivel(itemIndex+1,pesoRestante-pesoItem,valorTotal+valorItem);
+		BackPackProblem::Item itemRaiz(0.0,0.0);
+
+		filaItems.push(std::make_pair(itemRaiz,-1));
+
+		while(!filaItems.empty()){
+			std::pair<Item,int> parAtual = filaItems.pop();
+			BackPackProblem::Item itemAtual = parAtual.first;
+			int index = parAtual.second;
+
+
+			if(index == this->getItems().size()){
+				continue;
 			}
 
-			valorSemItem = this->maiorValorPossivel(itemIndex+1,pesoRestante,valorTotal);
+			BackPackProblem::Item proxItem = this->getItems()[index+1];
 
-			if(valorComItem > valorSemItem){
-				return valorComItem;
-			}else{
-				return valorSemItem;
+			float ubProxItem = calculaUB(proxItem, maiorValor, this->getMaxWeigth()-pesoAcumulado);
+
+			if(ubProxItem > maiorValor){
+				filaItems.push(std::make_pair(proxItem,index+1));
 			}
+
+			
+
 		}
 	}
 
 	float BackPackBB::solve(){
-		
 		return maiorValorPossivel();
 	}
 }

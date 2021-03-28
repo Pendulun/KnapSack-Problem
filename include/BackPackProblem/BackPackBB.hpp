@@ -5,11 +5,15 @@
 #include "Item.hpp"
 #include "BackPack.hpp"
 #include <iostream>
+#include <queue>
+#include <pair>
 
 namespace BackPackProblem{
 	class BackPackBB : public BackPack{
 	private:
 		float maiorValorPossivel();
+		float calculaUB(const Item &proxItem, float valor, float pesoRestante);
+
 	public:
 		BackPackBB();
 		~BackPackBB() override;
