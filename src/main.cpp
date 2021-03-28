@@ -48,10 +48,12 @@ int main(int argc, char *argv[]){
 				
 						if(i==0){
 							fabricaMochila = new BackPackProblem::BackPackBTFactory();
+							std::cout<<"Executando para: "<<entrada<<" no algoritmo BackTracking"<<std::endl;
 							mochila = fabricaMochila->createBackPack();
 							mochila->setMaxWeigth(wMax);
 						}else{
 							fabricaMochila = new BackPackProblem::BackPackBBFactory();
+							std::cout<<"Executando para: "<<entrada<<" no algoritmo BranchAndBound"<<std::endl;
 							mochila = fabricaMochila->createBackPack();
 							mochila->setMaxWeigth(wMax);
 						}
