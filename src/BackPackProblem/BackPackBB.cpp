@@ -8,7 +8,12 @@ namespace BackPackProblem{
 	BackPackBB::~BackPackBB(){
 	}
 
+	float BackPackBB::maiorValorPossivel(){
+		return -1;
+	}
+
 	float BackPackBB::solve(){
-		return 1.0;
+		std::sort(BackPack::getItems().begin(),BackPack::getItems().end());
+		return maiorValorPossivel();
 	}
 }
