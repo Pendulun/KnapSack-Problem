@@ -1,12 +1,7 @@
 #include "Node.hpp"
 
 namespace BackPackProblem{
-	Node::Node(int index, float weigth, float value, float bound){
-		this->weigth = weigth;
-		this->value = value;
-		this->index = index;
-		this->bound = bound;
-	}
+	Node::Node(){}
 
 	float Node::getWeigth() const{
 		return this->weigth;
