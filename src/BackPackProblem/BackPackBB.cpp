@@ -13,7 +13,6 @@ namespace BackPackProblem{
 	}
 
 	float BackPackBB::solve(){
-		std::sort(BackPack::getItems().begin(),BackPack::getItems().end());
 		return maiorValorPossivel();
 	}
 }

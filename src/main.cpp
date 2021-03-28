@@ -7,6 +7,10 @@
 #include "Item.hpp"
 #include <chrono>
 
+bool compareItens(const BackPackProblem::Item &first, const BackPackProblem::Item &second){
+	return (first.getValue()/first.getWeigth())<(second.getValue()/second.getWeigth());
+}
+
 int main(int argc, char *argv[]){
 
 	if(argc > 1){
@@ -33,6 +37,8 @@ int main(int argc, char *argv[]){
 						BackPackProblem::Item novoItem(peso,valor);
 						items.push_back(novoItem);
 					}
+
+					std::sort(items.begin(),items.end(),compareItens);
 
 					for(int i = 0; i<2;i++){
 						BackPackProblem::BackPackFactory* fabricaMochila = nullptr;

@@ -4,6 +4,7 @@
 #include <algorithm>
 #include "Item.hpp"
 #include "BackPack.hpp"
+#include <iostream>
 
 namespace BackPackProblem{
 	class BackPackBB : public BackPack{
