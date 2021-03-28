@@ -8,8 +8,9 @@ namespace BackPackProblem{
 		float value;
 	public:
 		Item(float weigth, float value);
-		float getWeigth();
-		float getValue();
+		float getWeigth() const;
+		float getValue() const;
+		bool operator <(Item const& second);
 	};
 }
 
