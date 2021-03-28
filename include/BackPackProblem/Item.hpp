@@ -10,7 +10,6 @@ namespace BackPackProblem{
 		Item(float weigth, float value);
 		float getWeigth() const;
 		float getValue() const;
-		bool operator <(Item const& second);
 	};
 }
 

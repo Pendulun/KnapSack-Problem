@@ -14,7 +14,4 @@ namespace BackPackProblem{
 		return this->value;
 	}
 
-	bool Item::operator <(Item const& second) {
-		return (getValue()/getWeigth())/(second.getValue()/second.getWeigth());
-	}
 }
