@@ -3,6 +3,7 @@
 #include <vector>
 #include <algorithm>
 #include "Item.hpp"
+#include "Node.hpp"
 #include "BackPack.hpp"
 #include <iostream>
 #include <queue>
@@ -12,7 +13,7 @@ namespace BackPackProblem{
 	class BackPackBB : public BackPack{
 	private:
 		float maiorValorPossivel();
-		float calculaUB(const Item &proxItem, float valor, float pesoRestante);
+		float calculaUB(BackPackProblem::Node& noAtual);
 
 	public:
 		BackPackBB();
